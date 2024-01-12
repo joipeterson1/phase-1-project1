@@ -1,6 +1,7 @@
 /*
 When the page loaded fully, it will fetch images forEach object in db.json
 */
+let dogs = []
 //load the page fully
 const baseUrl = 'http://localhost:3000'
 //fetch services from db.json
@@ -8,7 +9,8 @@ function init() {
   fetch(`${baseUrl}/dogs`)
     .then(response => response.json())
     .then(data => {
-      data.forEach(data => {
+        dogs = data
+        data.forEach(dog => {
 /*
 for each data promised it will return:
 The dog name which will create an h2 element on top of the img
@@ -17,14 +19,18 @@ to a new div element that will also be created
 */
         const dogDetailContainer = document.querySelector('#dogname')
         const dogName = document.createElement('h2')
-        dogName.textContent = data.dogName
+        dogName.textContent = dog.dogName
         dogDetailContainer.appendChild(dogName)
 
         const imageDivider = document.createElement('div')
         const dogimage = document.createElement('img')
         imageDivider.appendChild(dogimage)
-          dogimage.src = data.imageUrl
-          dogimage.classList.add('dog-image')
+        dogimage.id = dog.id
+        dogimage.src = dog.imageUrl
+        dogimage.classList.add('dog-image')
+        dogimage.addEventListener('click', imageClick)
+        dogimage.addEventListener('mouseover', mouseoverEvent)
+        dogimage.addEventListener('mouseout', removeGrayscale)
         dogName.appendChild(imageDivider)
       })
     }
@@ -35,35 +41,26 @@ Grab Image, create an "click" event listener.
 Whenever the image is clicked it will Fetch the details forEach object in db.json that is clicked
 */
 
-const dogimages = document.getElementsByClassName('dog-image')
-
-Array.from(dogimages).forEach(image => {
-  image.addEventListener('click', imageClick)
-});
-
-function imageClick(image) {
-    fetch(`${baseUrl}/dogs`)
-        .then(response => response.json())
-        .then(data => {
+function imageClick(event) {
   // Display the details for the clicked dog image
-  const detailsContainer = document.createElement('div')
+  const targetImage = event.target
+  //const detailsContainer = document.createElement('div')
   const priceElement = document.createElement('p')
   const dogAgeElement = document.createElement('p')
   const dogSexElement = document.createElement('p')
   const pickupLocationElement = document.createElement('p')
 
-  priceElement.textContent = data.price
-  dogAgeElement.textContent = data.dogAge
-  dogSexElement.textContent = data.dogSex
-  pickupLocationElement.textContent = data.pickupLocation
+  priceElement.textContent = targetImage.price
+  dogAgeElement.textContent = targetImage.dogAge
+  dogSexElement.textContent = targetImage.dogSex
+  pickupLocationElement.textContent = targetImage.pickupLocation
 
-  detailsContainer.appendChild(priceElement)
+  //detailsContainer.appendChild(priceElement)
   priceElement.appendChild(dogAgeElement)
   dogAgeElement.appendChild(dogSexElement)
   dogSexElement.appendChild(pickupLocationElement)
 
-  image.parentNode.appendChild(detailsContainer)
-})
+  targetImage.appendChild(priceElement)
 }
 
 //EVENT LISTENER ISSUE
@@ -72,17 +69,9 @@ Grab the image, create a "mouseover" event.
 Whenever the mouse is over the images, it will grey out the picture.
 */
 
-Array.from(dogimages).forEach((image) => {
-    image.addEventListener('mouseover', mouseoverEvent)
-  })
-  
   function mouseoverEvent(image) {
-    image.target.style.filter = 'grayscale(50%)'
+    image.target.style.filter = 'grayscale(80%)'
   }
-  
-  Array.from(dogimages).forEach((image) => {
-    image.addEventListener('mouseout', removeGrayscale)
-  })
   
   function removeGrayscale(image) {
     image.target.style.filter = 'grayscale(0%)'

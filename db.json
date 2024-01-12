@@ -1,6 +1,7 @@
 {
     "dogs": [
       {
+        "id": 1,
         "dogName": "Tiny",
         "imageUrl": "https://images.dog.ceo/breeds/terrier-yorkshire/n02094433_1770.jpg",
         "price": "$1,500",
@@ -10,6 +11,7 @@
         "pickupLocation": "Jacksonville, FL"
       },
       {
+        "id": 2,
         "dogName": "Buckie",
         "imageUrl": "https://images.dog.ceo/breeds/pitbull/pitbull_dog.jpg",
         "price": "$1,800",
@@ -19,6 +21,7 @@
         "pickupLocation": "Fort Lauderdale, FL"
       },
       {
+        "id": 3,
         "dogName": "Fiona",
         "imageUrl": "https://images.dog.ceo/breeds/chihuahua/n02085620_4700.jpg",
         "price": "$1,200",
@@ -28,6 +31,7 @@
         "pickupLocation": "Tallahassee, FL"
       },
       {
+        "id": 4,
         "dogName": "Baxter",
         "imageUrl": "https://images.dog.ceo/breeds/dane-great/n02109047_19984.jpg",
         "price": "$1,800",
@@ -37,6 +41,7 @@
         "pickupLocation": "Tallahassee, FL"
       },
       {
+        "id": 5,
         "dogName": "Snow",
         "imageUrl": "https://images.dog.ceo/breeds/poodle-toy/n02113624_1008.jpg",
         "price": "$1,700",
