@@ -49,19 +49,22 @@ function imageClick(event) {
   if (dog) {
   // Display the details for the clicked dog image
   const detailsContainer = document.createElement('div')
-  const priceElement = document.createElement('p')
-  const dogAgeElement = document.createElement('p')
-  const dogSexElement = document.createElement('p')
-  const pickupLocationElement = document.createElement('p')
+  const priceElement = document.createElement('h6')
+  const dogAgeElement = document.createElement('h6')
+  const dogBreedElement = document.createElement('h6')
+  const dogSexElement = document.createElement('h6')
+  const pickupLocationElement = document.createElement('h6')
 
   priceElement.innerText = dog.price
   dogAgeElement.innerText = dog.dogAge
+  dogBreedElement.innerText = dog.dogBreed
   dogSexElement.innerText = dog.dogSex
   pickupLocationElement.innerText = dog.pickupLocation
     
   detailsContainer.appendChild(priceElement)
   detailsContainer.appendChild(dogAgeElement)
   detailsContainer.appendChild(dogSexElement)
+  detailsContainer.appendChild(dogBreedElement)
   detailsContainer.appendChild(pickupLocationElement)
   const imageDivider = targetImage.parentNode
   imageDivider.appendChild(detailsContainer)
