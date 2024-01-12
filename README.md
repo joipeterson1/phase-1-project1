@@ -6,7 +6,8 @@ This website is an adoption website used for an Adoption Agency, it also provide
 
 ## How it Works
 Click the image of the dog that you are interested in to display the price, age, sex breed and pick up location of the dog you are interested in adopting.
-* put gif or video here *
+
+![giphy](https://github.com/joipeterson1/phase-1-project1/assets/146962824/b02aedaf-3b0c-4af6-9b1e-e76142f3dbd6)
 
 
 ## Installation
