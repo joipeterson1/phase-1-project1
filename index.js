@@ -29,26 +29,22 @@ to a new div element that will also be created
       })
     }
     )
-
+// EVENT LISTENER ISSUE
 /*
 Grab Image, create an "click" event listener.
 Whenever the image is clicked it will Fetch the details forEach object in db.json that is clicked
 */
 
 const dogimages = document.getElementsByClassName('dog-image')
+
 Array.from(dogimages).forEach(image => {
   image.addEventListener('click', imageClick)
 });
 
-function imageClick(event) {
-  const clickedImage = event.target
-
-  // Retrieve the dog details from the data attributes
-  const price = clickedImage.dataset.price
-  const dogAge = clickedImage.dataset.dogAge
-  const dogSex = clickedImage.dataset.dogSex
-  const pickupLocation = clickedImage.dataset.pickupLocation
-
+function imageClick(image) {
+    fetch(`${baseUrl}/dogs`)
+        .then(response => response.json())
+        .then(data => {
   // Display the details for the clicked dog image
   const detailsContainer = document.createElement('div')
   const priceElement = document.createElement('p')
@@ -56,38 +52,40 @@ function imageClick(event) {
   const dogSexElement = document.createElement('p')
   const pickupLocationElement = document.createElement('p')
 
-  priceElement.textContent = price
-  dogAgeElement.textContent = dogAge
-  dogSexElement.textContent = dogSex
-  pickupLocationElement.textContent = pickupLocation
+  priceElement.textContent = data.price
+  dogAgeElement.textContent = data.dogAge
+  dogSexElement.textContent = data.dogSex
+  pickupLocationElement.textContent = data.pickupLocation
 
   detailsContainer.appendChild(priceElement)
-  detailsContainer.appendChild(dogAgeElement)
-  detailsContainer.appendChild(dogSexElement)
-  detailsContainer.appendChild(pickupLocationElement)
+  priceElement.appendChild(dogAgeElement)
+  dogAgeElement.appendChild(dogSexElement)
+  dogSexElement.appendChild(pickupLocationElement)
 
-  clickedImage.parentNode.appendChild(detailsContainer)
+  image.parentNode.appendChild(detailsContainer)
+})
 }
 
+//EVENT LISTENER ISSUE
 /*
 Grab the image, create a "mouseover" event.
 Whenever the mouse is over the images, it will grey out the picture.
 */
 
-Array.from(dogimages).forEach((dogimage) => {
-    dogimage.addEventListener('mouseover', mouseoverEvent)
+Array.from(dogimages).forEach((image) => {
+    image.addEventListener('mouseover', mouseoverEvent)
   })
   
-  function mouseoverEvent(event) {
-    event.target.style.filter = 'grayscale(50%)'
+  function mouseoverEvent(image) {
+    image.target.style.filter = 'grayscale(50%)'
   }
   
-  Array.from(dogimages).forEach((dogimage) => {
-    dogimage.addEventListener('mouseout', removeGrayscale)
+  Array.from(dogimages).forEach((image) => {
+    image.addEventListener('mouseout', removeGrayscale)
   })
   
-  function removeGrayscale(event) {
-    event.target.style.filter = 'grayscale(0%)'
+  function removeGrayscale(image) {
+    image.target.style.filter = 'grayscale(0%)'
   }
 
   /* Grab the form, create a submit event.
