@@ -40,7 +40,6 @@ to a new div element that will also be created
 Grab Image, create an "click" event listener.
 Whenever the image is clicked it will Fetch the details forEach object in db.json that is clicked
 */
-
 function imageClick(event) {
   // grab the clicked image
   const targetImage = event.target
