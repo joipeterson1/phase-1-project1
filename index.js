@@ -70,7 +70,7 @@ Whenever the mouse is over the images, it will grey out the picture.
 */
 
   function mouseoverEvent(image) {
-    image.target.style.filter = 'grayscale(80%)'
+    image.target.style.filter = 'grayscale(100%)'
   }
   
   function removeGrayscale(image) {
