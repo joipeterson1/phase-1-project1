@@ -89,3 +89,31 @@ Array.from(dogimages).forEach((dogimage) => {
   function removeGrayscale(event) {
     event.target.style.filter = 'grayscale(0%)'
   }
+
+  /* Grab the form, create a submit event.
+When the form is submitted i will prevent the default,
+the Name, dog name of the input will display under the form.
+*/
+const adoptionForm = document.getElementById('adoption-form')
+const formInputContainer = document.getElementById('adopted-dogs')
+
+adoptionForm.addEventListener('submit', formEvent)
+
+function formEvent(event) {
+  event.preventDefault()
+
+  const nameInput = document.createElement('p')
+  const dognameInput = document.createElement('p')
+  const adoptionStatement = document.createElement('p')
+
+  const dogName = document.getElementById('dogName')
+  const name = document.getElementById('name')
+
+  dognameInput.innerText = dogName.value
+  nameInput.innerText = name.value
+
+  adoptionStatement.innerText = `${nameInput.innerText} has adopted ${dognameInput.innerText}!`
+
+  formInputContainer.appendChild(adoptionStatement)
+}
+}
