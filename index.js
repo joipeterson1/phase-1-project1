@@ -68,3 +68,24 @@ function imageClick(event) {
 
   clickedImage.parentNode.appendChild(detailsContainer)
 }
+
+/*
+Grab the image, create a "mouseover" event.
+Whenever the mouse is over the images, it will grey out the picture.
+*/
+
+Array.from(dogimages).forEach((dogimage) => {
+    dogimage.addEventListener('mouseover', mouseoverEvent)
+  })
+  
+  function mouseoverEvent(event) {
+    event.target.style.filter = 'grayscale(50%)'
+  }
+  
+  Array.from(dogimages).forEach((dogimage) => {
+    dogimage.addEventListener('mouseout', removeGrayscale)
+  })
+  
+  function removeGrayscale(event) {
+    event.target.style.filter = 'grayscale(0%)'
+  }
