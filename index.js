@@ -29,3 +29,42 @@ to a new div element that will also be created
       })
     }
     )
+
+/*
+Grab Image, create an "click" event listener.
+Whenever the image is clicked it will Fetch the details forEach object in db.json that is clicked
+*/
+
+const dogimages = document.getElementsByClassName('dog-image')
+Array.from(dogimages).forEach(image => {
+  image.addEventListener('click', imageClick)
+});
+
+function imageClick(event) {
+  const clickedImage = event.target
+
+  // Retrieve the dog details from the data attributes
+  const price = clickedImage.dataset.price
+  const dogAge = clickedImage.dataset.dogAge
+  const dogSex = clickedImage.dataset.dogSex
+  const pickupLocation = clickedImage.dataset.pickupLocation
+
+  // Display the details for the clicked dog image
+  const detailsContainer = document.createElement('div')
+  const priceElement = document.createElement('p')
+  const dogAgeElement = document.createElement('p')
+  const dogSexElement = document.createElement('p')
+  const pickupLocationElement = document.createElement('p')
+
+  priceElement.textContent = price
+  dogAgeElement.textContent = dogAge
+  dogSexElement.textContent = dogSex
+  pickupLocationElement.textContent = pickupLocation
+
+  detailsContainer.appendChild(priceElement)
+  detailsContainer.appendChild(dogAgeElement)
+  detailsContainer.appendChild(dogSexElement)
+  detailsContainer.appendChild(pickupLocationElement)
+
+  clickedImage.parentNode.appendChild(detailsContainer)
+}
