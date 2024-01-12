@@ -44,6 +44,9 @@ Whenever the image is clicked it will Fetch the details forEach object in db.jso
 function imageClick(event) {
   // grab the clicked image
   const targetImage = event.target
+  const dogId = parseInt(targetImage.id)
+  const dog = dogs.find(dog => dog.id === dogId);
+  if (dog) {
   // Display the details for the clicked dog image
   const detailsContainer = document.createElement('div')
   const priceElement = document.createElement('p')
@@ -51,17 +54,18 @@ function imageClick(event) {
   const dogSexElement = document.createElement('p')
   const pickupLocationElement = document.createElement('p')
 
-  priceElement.innerText = parseInt(targetImage.price)
-  dogAgeElement.innerText = parseInt(targetImage.dogAge)
-  dogSexElement.innerText = targetImage.dogSex
-  pickupLocationElement.innerText = targetImage.pickupLocation
-
+  priceElement.innerText = dog.price
+  dogAgeElement.innerText = dog.dogAge
+  dogSexElement.innerText = dog.dogSex
+  pickupLocationElement.innerText = dog.pickupLocation
+    
   detailsContainer.appendChild(priceElement)
   detailsContainer.appendChild(dogAgeElement)
   detailsContainer.appendChild(dogSexElement)
   detailsContainer.appendChild(pickupLocationElement)
-
-  targetImage.appendChild(detailsContainer)
+  const imageDivider = targetImage.parentNode
+  imageDivider.appendChild(detailsContainer)
+  }   
 }
 
 //EVENT LISTENER ISSUE

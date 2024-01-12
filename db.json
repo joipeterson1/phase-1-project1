@@ -4,51 +4,51 @@
         "id": 1,
         "dogName": "Tiny",
         "imageUrl": "https://images.dog.ceo/breeds/terrier-yorkshire/n02094433_1770.jpg",
-        "price": "$1,500",
-        "dogBreed": "Yorkshire Terrier",
-        "dogAge": "3 months old",
-        "dogSex": "Female",
-        "pickupLocation": "Jacksonville, FL"
+        "price": "Price: $1,500",
+        "dogBreed": "Breed: Yorkshire Terrier",
+        "dogAge": "Age: 3 months old",
+        "dogSex": "Sex: Female",
+        "pickupLocation": "Location: Jacksonville, FL"
       },
       {
         "id": 2,
         "dogName": "Buckie",
         "imageUrl": "https://images.dog.ceo/breeds/pitbull/pitbull_dog.jpg",
-        "price": "$1,800",
-        "dogBreed":"Pitbull",
-        "dogAge":"3 years ol",
-        "dogSex": "Male",
-        "pickupLocation": "Fort Lauderdale, FL"
+        "price": "Price: $1,800",
+        "dogBreed":"Breed: Pitbull",
+        "dogAge":"Age: 3 years ol",
+        "dogSex": "Sex: Male",
+        "pickupLocation": "Location: Fort Lauderdale, FL"
       },
       {
         "id": 3,
         "dogName": "Fiona",
         "imageUrl": "https://images.dog.ceo/breeds/chihuahua/n02085620_4700.jpg",
-        "price": "$1,200",
-        "dogBreed":"Chihuahua",
-        "dogAge":"2 years old",
-        "dogSex": "Female",
-        "pickupLocation": "Tallahassee, FL"
+        "price": "Price: $1,200",
+        "dogBreed":"Breed: Chihuahua",
+        "dogAge":"Age: 2 years old",
+        "dogSex": "Sex: Female",
+        "pickupLocation": "Location: Tallahassee, FL"
       },
       {
         "id": 4,
         "dogName": "Baxter",
         "imageUrl": "https://images.dog.ceo/breeds/dane-great/n02109047_19984.jpg",
-        "price": "$1,800",
-        "dogBreed":"Great Dane",
-        "dogAge":"4 years old",
-        "dogSex": "Male",
-        "pickupLocation": "Tallahassee, FL"
+        "price": "Price: $1,800",
+        "dogBreed":"Breed: Great Dane",
+        "dogAge":"Age: 4 years old",
+        "dogSex": "Sex: Male",
+        "pickupLocation": "Location: Tallahassee, FL"
       },
       {
         "id": 5,
         "dogName": "Snow",
         "imageUrl": "https://images.dog.ceo/breeds/poodle-toy/n02113624_1008.jpg",
-        "price": "$1,700",
-        "dogBreed":"Toy Poodle",
-        "dogAge":"1 year old",
-        "dogSex": "Female",
-        "pickupLocation": "Jacksonville, FL"
+        "price": "Price: $1,700",
+        "dogBreed":"Breed: Toy Poodle",
+        "dogAge":"Age: 1 year old",
+        "dogSex": "Sex: Female",
+        "pickupLocation": "Location: Jacksonville, FL"
       }
     ]
   }
