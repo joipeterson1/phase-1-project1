@@ -50,10 +50,10 @@ function imageClick(event) {
   const dogSexElement = document.createElement('p')
   const pickupLocationElement = document.createElement('p')
 
-  priceElement.textContent = targetImage.price
-  dogAgeElement.textContent = targetImage.dogAge
-  dogSexElement.textContent = targetImage.dogSex
-  pickupLocationElement.textContent = targetImage.pickupLocation
+  priceElement.innerText = parseInt(targetImage.price)
+  dogAgeElement.innerText = parseInt(targetImage.dogAge)
+  dogSexElement.innerText = targetImage.dogSex
+  pickupLocationElement.innerText = targetImage.pickupLocation
 
   //detailsContainer.appendChild(priceElement)
   priceElement.appendChild(dogAgeElement)
