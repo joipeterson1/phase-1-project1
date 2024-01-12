@@ -9,6 +9,9 @@ Click the image of the dog that you are interested in to display the price, age,
 
 ![giphy](https://github.com/joipeterson1/phase-1-project1/assets/146962824/b02aedaf-3b0c-4af6-9b1e-e76142f3dbd6)
 
+Submit an Adoption Form by filling in your Name, The dog Name you want to adopt, your address and the dog breed.
+
+![giphy (2)](https://github.com/joipeterson1/phase-1-project1/assets/146962824/eff8df22-59f0-4067-9016-f9d07c35a4ab)
 
 ## Installation
 Use the link [TheDogLovers](https://github.com/joipeterson1/phase-1-project1) to access the repository and clone the SSH into the terminal
