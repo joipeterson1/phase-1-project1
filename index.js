@@ -117,3 +117,4 @@ function formEvent(event) {
   formInputContainer.appendChild(adoptionStatement)
 }
 }
+document.addEventListener('DOMContentLoaded', init)
