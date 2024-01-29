@@ -28,25 +28,28 @@ to a new div element that will also be created
         dogimage.id = dog.id
         dogimage.src = dog.imageUrl
         dogimage.classList.add('dog-image')
-        dogimage.addEventListener('click', imageClick)
+        const images = document.querySelectorAll('img');
+        images.forEach(image => {
+        image.addEventListener('click', imageClick);
+        })
         dogimage.addEventListener('mouseover', mouseoverEvent)
         dogimage.addEventListener('mouseout', removeGrayscale)
         dogName.appendChild(imageDivider)
-      })
+      }) 
     }
     )
-// EVENT LISTENER ISSUE
 /*
 Grab Image, create an "click" event listener.
 Whenever the image is clicked it will Fetch the details forEach object in db.json that is clicked
 */
 function imageClick(event) {
   // grab the clicked image
+
   const targetImage = event.target
   const dogId = parseInt(targetImage.id)
-  const dog = dogs.find(dog => dog.id === dogId);
+  const dog = dogs.find(dog => dog.id === dogId)
   if (dog) {
-  // Display the details for the clicked dog image
+  //Display the details for the clicked dog image
   const detailsContainer = document.createElement('div')
   const priceElement = document.createElement('h6')
   const dogAgeElement = document.createElement('h6')
@@ -67,12 +70,11 @@ function imageClick(event) {
   detailsContainer.appendChild(pickupLocationElement)
   const imageDivider = targetImage.parentNode
   imageDivider.appendChild(detailsContainer)
-  }   
+ }   
 }
 
-//EVENT LISTENER ISSUE
-/*
-Grab the image, create a "mouseover" event.
+
+/*Grab the image, create a "mouseover" event.
 Whenever the mouse is over the images, it will grey out the picture.
 */
 
