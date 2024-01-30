@@ -17,24 +17,22 @@ The dog name which will create an h2 element on top of the img
 the dog image which will create a new img element and append the element
 to a new div element that will also be created
 */
-        const dogDetailContainer = document.querySelector('#dogname')
-        const dogName = document.createElement('h2')
-        dogName.textContent = dog.dogName
-        dogDetailContainer.appendChild(dogName)
+        const dogContainer = document.querySelector('#dogname')
+        const displaydogName = document.createElement('h2')
+        displaydogName.textContent = dog.dogName
+        dogContainer.appendChild(displaydogName)
 
         const imageDivider = document.createElement('div')
-        const dogimage = document.createElement('img')
-        imageDivider.appendChild(dogimage)
-        dogimage.id = dog.id
-        dogimage.src = dog.imageUrl
-        dogimage.classList.add('dog-image')
-        const images = document.querySelectorAll('img');
-        images.forEach(image => {
-        image.addEventListener('click', imageClick);
-        })
-        dogimage.addEventListener('mouseover', mouseoverEvent)
-        dogimage.addEventListener('mouseout', removeGrayscale)
-        dogName.appendChild(imageDivider)
+        const displaydogimage = document.createElement('img')
+        imageDivider.appendChild(displaydogimage)
+        //dogimage.id = dog.id
+        displaydogimage.src = dog.imageUrl
+        displaydogimage.classList.add('dog-image')
+        displaydogimage.addEventListener('click', imageClick)
+        
+        displaydogimage.addEventListener('mouseover', mouseoverEvent)
+        displaydogimage.addEventListener('mouseout', removeGrayscale)
+        displaydogName.appendChild(imageDivider)
       }) 
     }
     )
@@ -44,11 +42,11 @@ Whenever the image is clicked it will Fetch the details forEach object in db.jso
 */
 function imageClick(event) {
   // grab the clicked image
-
   const targetImage = event.target
-  const dogId = parseInt(targetImage.id)
-  const dog = dogs.find(dog => dog.id === dogId)
+  //debugger
+  const dog = dogs.find(d => d.imageUrl === targetImage.src)
   if (dog) {
+    console.log(dog)
   //Display the details for the clicked dog image
   const detailsContainer = document.createElement('div')
   const priceElement = document.createElement('h6')
@@ -102,11 +100,11 @@ function formEvent(event) {
   const dognameInput = document.createElement('p')
   const adoptionStatement = document.createElement('p')
 
-  const dogName = document.getElementById('dogName')
-  const name = document.getElementById('name')
+  const formdogName = document.getElementById('dogName')
+  const formname = document.getElementById('name')
 
-  dognameInput.innerText = dogName.value
-  nameInput.innerText = name.value
+  dognameInput.innerText = formdogName.value
+  nameInput.innerText = formname.value
 
   adoptionStatement.innerText = `${nameInput.innerText} has adopted ${dognameInput.innerText}!`
 
